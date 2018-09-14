@@ -4,12 +4,18 @@ let restaurants,
 var newMap
 var markers = []
 
+// Registers the Service Worker file in root
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+  navigator.serviceWorker
+  .register('/sw.js')
+  .then(function(registration) {
     console.log('Service worker registration succeeded:', registration);
+  })
+  .catch(function(error) {
+    console.log(error);
   });
 } else {
-  console.log('Service workers are not supported.');
+  console.log('Service workers are not supported by the browser.');
 }
 
 /**
@@ -86,7 +92,8 @@ initMap = () => {
         scrollWheelZoom: false
       });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-    mapboxToken: 'pk.eyJ1Ijoic2dvbnpvMyIsImEiOiJjamxxMmxhaTUyYmpsM2tzMXU1azBmeTJ1In0.WJfm3Cs64k3iKyLgOYkopA',
+    // Mapbox token should be placed here, I have removed my token prior to submission
+    mapboxToken: '',
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -169,9 +176,10 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = 'restaurant image';
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
