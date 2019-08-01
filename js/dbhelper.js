@@ -8,9 +8,10 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 8000 // Change this to your server port
-    return `http://localhost:${port}/data/restaurants.json`;
+    const port = 8000; // Change this to your server port
+    return `https://sgonzo3.github.io/restaurant-map/data/restaurants.json`;
   }
+
 
   /**
    * Fetch all restaurants.
@@ -156,7 +157,7 @@ class DBHelper {
   /**
    * Map marker for a restaurant.
    */
-   
+
   static mapMarkerForRestaurant(restaurant, map) {
     const marker = new google.maps.Marker({
       position: restaurant.latlng,
