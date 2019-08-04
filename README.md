@@ -1,5 +1,3 @@
-Place a Mapbox Token in main.js and restaurant_info.js
-
 Open index.html
 
 Restaurants are displayed on map
