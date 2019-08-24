@@ -1,7 +1,7 @@
-#Restaurant Map
+# Restaurant Map
   An interactive map listing restaurants in New York and reviews
   
-##Instructions
+## Instructions
   Open index.html
 
   Restaurants are displayed on map
