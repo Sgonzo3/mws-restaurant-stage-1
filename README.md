@@ -1,6 +1,6 @@
 # Restaurant Map
-  An interactive map listing restaurants in New York and reviews
-  
+An interactive map listing restaurants in New York and reviews. Completed as part of the Udacity Front-End Web Developer Nanodegree.
+
 ## Instructions
   Open index.html
 
